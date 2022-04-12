@@ -81,7 +81,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`http://localhost:3000/api/locations/${params.name}`);
+  const res = await fetch(`http://localhost:3000/api/locations/${params?.name}`);
   const continent: ContinentData = await res.json();
 
   return {
