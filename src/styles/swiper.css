@@ -1,0 +1,22 @@
+.swiper-button-prev {
+  margin-left: 20px;
+}
+
+.swiper-button-next {
+  margin-right: 20px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #FFBA08;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #FFBA08;
+  opacity: 1;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
+  background: #999999;
+  opacity: 1;
+}
