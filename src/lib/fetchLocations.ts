@@ -6,7 +6,7 @@ interface Location {
   flag: string;
 }
 
-type ContinentData = {
+export interface ContinentData {
   id: string;
   name: string;
   text: string;
@@ -16,10 +16,16 @@ type ContinentData = {
   locations: Location[];
 }
 
-export async function loadLocations(name: string) {
-
-  const res = await fetch(`http://localhost:3000/api/locations/${name}`);
+export async function loadLocations(id: string) {
+  const res = await fetch(`https://fake-server-rocketshoes.herokuapp.com/continents/${id}`);
   const continent: ContinentData = await res.json();
 
   return continent;
+}
+
+export async function loadContinents() {
+  const response = await fetch(`https://fake-server-rocketshoes.herokuapp.com/continents`);
+  const continents: ContinentData[] = await response.json();
+
+  return continents;
 }

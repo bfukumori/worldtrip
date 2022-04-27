@@ -19,7 +19,7 @@ export const Carrousel = () => {
         spaceBetween={50}
       >
         <SwiperSlide >
-          <Link href="/locations/europa" passHref>
+          <Link href="/locations/4" passHref>
             <ChakraLink>
               <Image src="/images/europa.jpg" alt="europa" />
             </ChakraLink>
@@ -27,7 +27,7 @@ export const Carrousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link href="/locations/asia" passHref>
+          <Link href="/locations/1" passHref>
             <ChakraLink>
               <Image src="/images/asia.jpg" alt="asia" />
             </ChakraLink>
@@ -35,7 +35,7 @@ export const Carrousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link href="/locations/america" passHref>
+          <Link href="/locations/2" passHref>
             <ChakraLink>
               <Image src="/images/america.jpg" alt="america" />
             </ChakraLink>
@@ -43,7 +43,7 @@ export const Carrousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link href="/locations/africa" passHref>
+          <Link href="/locations/3" passHref>
             <ChakraLink>
               <Image src="/images/africa.jpg" alt="africa" />
             </ChakraLink>
@@ -51,7 +51,7 @@ export const Carrousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <Link href="/locations/oceania" passHref>
+          <Link href="/locations/5" passHref>
             <ChakraLink>
               <Image src="/images/oceania.jpg" alt="oceania" />
             </ChakraLink>

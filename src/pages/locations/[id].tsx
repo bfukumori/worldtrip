@@ -64,19 +64,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
       {
-        params: { name: 'asia' }
+        params: { id: "1" }
       },
       {
-        params: { name: 'america' }
+        params: { id: "2" }
       },
       {
-        params: { name: 'africa' }
+        params: { id: "3" }
       },
       {
-        params: { name: 'europa' }
+        params: { id: "4" }
       },
       {
-        params: { name: 'oceania' }
+        params: { id: "5" }
       },
 
     ],
@@ -84,7 +84,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const continent = await loadLocations(params?.name as string)
+  const continent = await loadLocations(params?.id as string)
 
   return {
     props: {
