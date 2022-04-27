@@ -2,6 +2,7 @@ import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, SimpleGrid, Text, Tooltip } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { LocationCard } from "../../components/LocationCard";
+import { loadLocations } from "../../lib/fetchLocations";
 
 interface Location {
   id: string;
@@ -9,16 +10,6 @@ interface Location {
   country: string;
   image: string;
   flag: string;
-}
-
-type ContinentData = {
-  id: string;
-  name: string;
-  text: string;
-  totalCountries: number;
-  totalLanguages: number;
-  totalCities: number;
-  locations: Location[];
 }
 
 const Location = ({ continent }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -70,19 +61,30 @@ const Location = ({ continent }: InferGetStaticPropsType<typeof getStaticProps>)
 export default Location;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://localhost:3000/api/locations");
-  const continents: ContinentData[] = await res.json();
-
-  const paths = continents.map((continent) => ({ params: { name: continent.name } }))
-
   return {
-    paths,
+    paths: [
+      {
+        params: { name: 'asia' }
+      },
+      {
+        params: { name: 'america' }
+      },
+      {
+        params: { name: 'africa' }
+      },
+      {
+        params: { name: 'europa' }
+      },
+      {
+        params: { name: 'oceania' }
+      },
+
+    ],
     fallback: false
   }
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`http://localhost:3000/api/locations/${params?.name}`);
-  const continent: ContinentData = await res.json();
+  const continent = await loadLocations(params?.name as string)
 
   return {
     props: {
