@@ -69,7 +69,7 @@ In addition, it is good to have an editor to work with the code like [VSCode] (h
 $ git clone git@github.com:bfukumori/worldtrip.git
 
 # Access the project folder in your terminal
-$ cd dtmoney
+$ cd worldtrip
 
 # Install the dependencies
 $ npm install
