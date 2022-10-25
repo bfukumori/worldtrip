@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { loadContinents } from "../../../lib/fetchLocations";
+
 export default async function locationHandler({ query: { id } }: NextApiRequest, res: NextApiResponse) {
   const continents = await loadContinents();
 

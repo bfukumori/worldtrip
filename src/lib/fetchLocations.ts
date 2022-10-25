@@ -1,3 +1,5 @@
+import { continents } from "../../data";
+
 interface Location {
   id: string;
   city: string;
@@ -16,16 +18,20 @@ export interface ContinentData {
   locations: Location[];
 }
 
-export async function loadLocations(id: string) {
-  const res = await fetch(`https://fake-server-rocketshoes.herokuapp.com/continents/${id}`);
-  const continent: ContinentData = await res.json();
+// const url = "" //API url
 
-  return continent;
+export async function loadLocations(id: string) {
+  // const response = await fetch(`${url}/continents/${id}`);
+  // const continent: ContinentData = await response.json();
+
+  // return continent;
+  return continents.find(continent=>continent.id===id) 
 }
 
 export async function loadContinents() {
-  const response = await fetch(`https://fake-server-rocketshoes.herokuapp.com/continents`);
-  const continents: ContinentData[] = await response.json();
+  // const response = await fetch(`${url}/continents`);
+  // const continents: ContinentData[] = await response.json();
 
-  return continents;
+  // return continents;
+  return continents
 }
